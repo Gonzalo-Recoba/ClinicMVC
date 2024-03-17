@@ -30,16 +30,16 @@ public class IndexController {
     @GetMapping
     public String buscarOdontologoPorId(Model model, @RequestParam Long id, @RequestParam String nombre) {
         Optional<Odontologo> odontologo = odontologoService.buscarPorId(id);
-        model.addAttribute("nombre", odontologo.getNombre());
-        model.addAttribute("apellido", odontologo.getApellido());
+        model.addAttribute("nombre", odontologo.get().getNombre());
+        model.addAttribute("apellido", odontologo.get().getApellido());
         return "buscarOdontologo";
     }
 
     @GetMapping("/{id}")
     public String buscarOdontologoPorIdVariable(Model model, @PathVariable Long id) {
         Optional<Odontologo> odontologo = odontologoService.buscarPorId(id);
-        model.addAttribute("nombre", odontologo.getNombre());
-        model.addAttribute("apellido", odontologo.getApellido());
+        model.addAttribute("nombre", odontologo.get().getNombre());
+        model.addAttribute("apellido", odontologo.get().getApellido());
         return "buscarOdontologo";
     }
 

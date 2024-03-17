@@ -25,7 +25,7 @@ public class Paciente {
     private String dni;
     private LocalDate fechaIngreso;
     private Domicilio domicilio;
-    @OneToMany(mappedBy = "paciente" /*fetch =*/ )
+    @OneToMany(mappedBy = "paciente")
     private Set<Turno> turnoSet = new HashSet<>();
 //
 //    public Paciente(Integer id, String nombre, String apellido, String dni, LocalDate fechaAlta, Domicilio domicilio) {

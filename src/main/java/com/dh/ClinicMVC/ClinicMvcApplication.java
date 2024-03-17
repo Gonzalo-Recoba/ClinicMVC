@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ClinicMvcApplication {
 
 	public static void main(String[] args) {
-//		BD.crearTablas();
-		SpringApplication.run(ClinicMvcApplication.class, args);
-
+		SpringApplication.run(ClinicMvcApplication.class);
 
 
 
