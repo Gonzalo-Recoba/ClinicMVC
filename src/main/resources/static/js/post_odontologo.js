@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
     formulario.addEventListener('submit', function (event) {
 
        //creamos un JSON que tendrá los datos del nuevo odontólogo
-        const formData = {
+        const formDataOdontologo = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
             matricula: document.querySelector('#matricula').value,
@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(formDataOdontologo)
         }
 
         fetch(url, settings)
@@ -64,7 +64,7 @@ window.addEventListener('load', function () {
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/dentistList.html") {
+        } else if (pathname == "/odontologoLista.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();

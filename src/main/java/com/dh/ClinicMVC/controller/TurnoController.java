@@ -1,5 +1,6 @@
 package com.dh.ClinicMVC.controller;
 
+import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.entity.Turno;
 import com.dh.ClinicMVC.service.IOdontologoService;
 import com.dh.ClinicMVC.service.IPacienteService;
@@ -11,10 +12,9 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/turnos")
@@ -30,6 +30,11 @@ public class TurnoController {
         this.turnoService = turnoService;
         this.odontologoService = odontologoService;
         this.pacienteService = pacienteService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Turno>> listarTodos() {
+        return ResponseEntity.ok(turnoService.listarTodos());
     }
 
 

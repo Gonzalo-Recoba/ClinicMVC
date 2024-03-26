@@ -25,9 +25,7 @@ window.addEventListener('load', function () {
                     '<td class=\"td_nombre\">' + dentist.nombre.toUpperCase() + '</td>' +
                     '<td class=\"td_apellido\">' + dentist.apellido.toUpperCase() + '</td>' +
                     '<td class=\"td_matricula\">' + dentist.matricula + '</td>'
-
                     ;
-
         };
 
     })

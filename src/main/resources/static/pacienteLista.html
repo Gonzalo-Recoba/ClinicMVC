@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>DH Clínica Dental</title>
+    <title>Pacientes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/post_odontologo.js"></script>
+    <script text="text/javascript" src="/js/get_paciente.js.js"></script>
+    <script text="text/javascript" src="/js/update_paciente.js"></script>
+    <script text="text/javascript" src="/js/delete_paciente.js"></script>
 </head>
 <body>
 
@@ -47,41 +49,62 @@
     </div>
 </nav>
 
+
 <div class="container">
+    <div id="div_paciente_table">
+        <h1>Pacientes</h1>
+        <div class="row col-md-6 table-responsive">
+            <table id="pacienteTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    <th>Fecha de ingreso</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody id="pacienteTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <div class="row">
-        <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
-            <h3>Agregar odontólogos</h3>
-            <form id="add_new_dentist">
+        <div class="col-sm-6" style="display: none; background-color:#e6fffa; padding:10px; border-radius:3px"
+             id="div_paciente_updating">
+            <form id="update_paciente_form">
                 <div class="form-group">
-                    <label class="control-label" for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre"
-                           placeholder="Ingrese el nombre"
-                           name="nombre" required></input>
+                    <label >Id:</label>
+                    <input type="text" class="form-control" id="paciente_id" readonly>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="apellido">Apellido:</label>
-                    <input type="text" class="form-control" id="apellido"
-                           placeholder="Ingrese el apellido"
-                           name="apellido" required></input>
+                    <label >Nombre:</label>
+                    <input type="text" class="form-control" placeholder="nombre" id="nombrePaciente">
                 </div>
-
                 <div class="form-group">
-                    <label class="control-label" for="matricula">Matrícula:</label>
-                    <input type="text" class="form-control" id="matricula"
-                           placeholder="Ingrese la matrícula"
-                           name="matricula" required></input>
+                    <label >Apellido</label>
+                    <input type="text" class="form-control" placeholder="apellido" id="apellidoPaciente">
+                </div>
+                <div class="form-group">
+                    <label >DNI</label>
+                    <input type="text" class="form-control" placeholder="DNI" id="dniPaciente">
+                </div>
+                <div class="form-group">
+                    <label >Fecha de Ingreso</label>
+                    <input type="text" class="form-control" placeholder="apellido" id="fechaIngresoPaciente">
                 </div>
 
 
-                <button type="submit" class="btn btn-danger"
-                        id="btn-add-new-dentist">Guardar</button>
+                <button type="submit" class="btn btn-primary">Modificar</button>
             </form>
-            <div id="response" style="display:none; margin-top:10px">
+            <div id="response" style="display:none; margin:10px">
             </div>
         </div>
     </div>
-</div>
+    <hr>
 
+</div>
 </body>
 </html>

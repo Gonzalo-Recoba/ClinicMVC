@@ -19,80 +19,18 @@ import java.util.Set;
 public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "apellido")
     private String apellido;
+    @Column(name = "dni")
     private String dni;
+    @Column(name = "fechaIngreso")
     private LocalDate fechaIngreso;
+    @OneToOne
     private Domicilio domicilio;
     @OneToMany(mappedBy = "paciente")
     private Set<Turno> turnoSet = new HashSet<>();
-//
-//    public Paciente(Integer id, String nombre, String apellido, String dni, LocalDate fechaAlta, Domicilio domicilio) {
-//        this.id = id;
-//        this.nombre = nombre;
-//        this.apellido = apellido;
-//        this.dni = dni;
-//        this.fechaIngreso = fechaAlta;
-//        this.domicilio = domicilio;
-//    }
-//
-//    public Paciente(String nombre, String apellido, String dni, LocalDate fechaAlta, Domicilio domicilio) {
-//        this.nombre = nombre;
-//        this.apellido = apellido;
-//        this.dni = dni;
-//        this.fechaIngreso = fechaAlta;
-//        this.domicilio = domicilio;
-//    }
-//
-//    public Paciente() {
-//    }
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    public String getNombre() {
-//        return nombre;
-//    }
-//
-//    public void setNombre(String nombre) {
-//        this.nombre = nombre;
-//    }
-//
-//    public String getApellido() {
-//        return apellido;
-//    }
-//
-//    public void setApellido(String apellido) {
-//        this.apellido = apellido;
-//    }
-//
-//    public String getDni() {
-//        return dni;
-//    }
-//
-//    public void setDni(String dni) {
-//        this.dni = dni;
-//    }
-//
-//    public LocalDate getFechaIngreso() {
-//        return fechaIngreso;
-//    }
-//
-//    public void setFechaIngreso(LocalDate fechaIngreso) {
-//        this.fechaIngreso = fechaIngreso;
-//    }
-//
-//    public Domicilio getDomicilio() {
-//        return domicilio;
-//    }
-//
-//    public void setDomicilio(Domicilio domicilio) {
-//        this.domicilio = domicilio;
-//    }
 }
