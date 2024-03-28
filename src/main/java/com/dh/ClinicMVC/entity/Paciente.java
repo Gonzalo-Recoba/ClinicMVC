@@ -1,5 +1,6 @@
 package com.dh.ClinicMVC.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,8 +30,13 @@ public class Paciente {
     private String dni;
     @Column(name = "fechaIngreso")
     private LocalDate fechaIngreso;
+
     @OneToOne
     private Domicilio domicilio;
+
     @OneToMany(mappedBy = "paciente")
-    private Set<Turno> turnoSet = new HashSet<>();
+    @JsonIgnore
+    private Set<Turno> turnoSet;
+//    private Set<Turno> turnoSet = new HashSet<>();
 }
+

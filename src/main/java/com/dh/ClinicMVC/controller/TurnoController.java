@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/turnos")
@@ -57,4 +58,34 @@ public class TurnoController {
         }
         return response;
     }
+
+
+    @PutMapping
+    public ResponseEntity<String> actualizar(@RequestBody Turno turno) {
+        ResponseEntity<String> response;
+        Optional<Turno> turnoOptional = turnoService.buscarPorId(turno.getId());
+        if (turnoOptional != null) {
+            turnoService.actualizar(turno);
+            response = ResponseEntity.ok("Se actualizó el turno con id " + turno.getId());
+        } else {
+            response = ResponseEntity.ok().body("No se puede actualizar el turno");
+        }
+        return response;
+    }
+
+
+    @DeleteMapping
+    public ResponseEntity<String> eliminar(@RequestBody Turno turno) {
+        ResponseEntity<String> response;
+        Optional<Turno> turnoOptional = turnoService.buscarPorId(turno.getId());
+        if (turnoOptional != null) {
+            turnoService.eliminar(turno);
+            response = ResponseEntity.ok("Se elimino el turno con id " + turno.getId());
+        } else {
+            response = ResponseEntity.ok().body("No se puede eliminar el turno");
+        }
+        return response;
+    }
+
+
 }

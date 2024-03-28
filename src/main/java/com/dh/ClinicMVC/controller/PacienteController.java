@@ -23,12 +23,32 @@ public class PacienteController {
     }
 
 
-    //busca por id
-    @GetMapping("/{id}")
+    //Buscar por id
+    @GetMapping("/id{id}")
     public ResponseEntity<Optional<Paciente>> buscarPorId(@PathVariable Long id) {
 
         return ResponseEntity.ok(pacienteService.buscarPorId(id));
     }
+
+    //Buscar por nombre
+    @GetMapping("/nombre={nombre}")
+    public ResponseEntity<Optional<Paciente>> buscarPorNombre(@PathVariable String nombre) {
+        return ResponseEntity.ok(pacienteService.buscarPorNombre(nombre));
+    }
+
+    //Buscar por apellido
+    @GetMapping("/apellido={apellido}")
+    public ResponseEntity<Optional<Paciente>> buscarPorApellido(@PathVariable String apellido) {
+        return ResponseEntity.ok(pacienteService.buscarPorApellido(apellido));
+    }
+
+
+    //Buscar por DNI
+    @GetMapping("/dni={dni}")
+    public ResponseEntity<Optional<Paciente>> buscarPorDni(@PathVariable String dni) {
+        return ResponseEntity.ok(pacienteService.buscarPorDni(dni));
+    }
+
 
     @PostMapping
     public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente) {

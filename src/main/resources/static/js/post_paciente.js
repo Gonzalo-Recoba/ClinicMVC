@@ -12,8 +12,9 @@ window.addEventListener('load', function () {
             nombre: document.querySelector('#nombrePaciente').value,
             apellido: document.querySelector('#apellidoPaciente').value,
             dni: document.querySelector('#dniPaciente').value,
-            fechaIngreso: document.querySelector('#fechaIngresoPaciente'),
+            fechaIngreso: document.querySelector('#fechaIngresoPaciente').value,
         };
+        console.log(formDataPaciente)
         //invocamos utilizando la función fetch la API odontólogos con el método POST que guardará
         //el odontólogo que enviaremos en formato JSON
         const url = '/pacientes';
@@ -64,9 +65,9 @@ window.addEventListener('load', function () {
     (function(){
         let pathname = window.location.pathname;
         if(pathname === "/"){
-            document.querySelector(".nav .nav-item a:first").addClass("active");
+            document.querySelector(".nav .nav-item a:first-child").classList.add("active");
         } else if (pathname == "/pacienteLista.html") {
-            document.querySelector(".nav .nav-item a:last").addClass("active");
+            document.querySelector(".nav .nav-item a:last-child").classList.add("active");
         }
     })();
 });

@@ -1,5 +1,6 @@
 package com.dh.ClinicMVC.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +28,8 @@ public class Odontologo {
     @Column(name = "matricula")
     private String matricula;
     @OneToMany(mappedBy = "odontologo")
-    private Set<Turno> turnoSet = new HashSet<Turno>();
+    @JsonIgnore
+    private Set<Turno> turnoSet;
+//    private Set<Turno> turnoSet = new HashSet<Turno>();
 
 }

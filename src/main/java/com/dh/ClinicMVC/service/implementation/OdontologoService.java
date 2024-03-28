@@ -37,9 +37,40 @@ public class OdontologoService implements IOdontologoService {
         } else {
             return null;
         }
-
+    }
+    @Override
+    public Optional<Odontologo> buscarPorNombre(String nombre) {
+        Optional<Odontologo> odontologoOptional = odontologoRepository.buscarOdontologoPorNombre(nombre);
+        if(odontologoOptional.isPresent()) {
+            return odontologoOptional;
+        } else {
+            return null;
+        }
     }
 
+    @Override
+    public Optional<Odontologo> buscarPorApellido(String apellido) {
+        Optional<Odontologo> odontologoOptional = odontologoRepository.buscarOdontologoPorApellido(apellido);
+        if(odontologoOptional.isPresent()) {
+            return odontologoOptional;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public Optional<Odontologo> buscarPorMatricula(String matricula) {
+        Optional<Odontologo> odontologoOptional = odontologoRepository.buscarOdontologoPorMatriucula(matricula);
+        if(odontologoOptional.isPresent()) {
+            return odontologoOptional;
+        } else {
+            return null;
+        }
+    }
+
+
+    @Override
+    public void eliminar(Odontologo odontologo){odontologoRepository.delete(odontologo);}
     @Override
     public void actualizar(Odontologo odontologo) {
         odontologoRepository.save(odontologo);

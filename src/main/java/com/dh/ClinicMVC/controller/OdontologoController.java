@@ -1,6 +1,7 @@
 package com.dh.ClinicMVC.controller;
 
 import com.dh.ClinicMVC.entity.Odontologo;
+import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.service.IOdontologoService;
 import com.dh.ClinicMVC.service.implementation.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,32 @@ public class OdontologoController {
     }
 
     //busca por id
-    @GetMapping("/{id}")
+    @GetMapping("/id{id}")
     public ResponseEntity<Optional<Odontologo>> buscarPorId(@PathVariable Long id) {
-
         return ResponseEntity.ok(odontologoService.buscarPorId(id));
     }
+
+    //busca por nombre
+    @GetMapping("/nombre={nombre}")
+    public ResponseEntity<Optional<Odontologo>> buscarPorNombre(@PathVariable String nombre) {
+        return ResponseEntity.ok(odontologoService.buscarPorNombre(nombre));
+    }
+
+    //Buscar por apellido
+    @GetMapping("/apellido={apellido}")
+    public ResponseEntity<Optional<Odontologo>> buscarPorApellido(@PathVariable String apellido) {
+        return ResponseEntity.ok(odontologoService.buscarPorApellido(apellido));
+    }
+
+
+    //Buscar por matricula
+    @GetMapping("/matricula={matricula}")
+    public ResponseEntity<Optional<Odontologo>> buscarPorMatricula(@PathVariable String matricula) {
+        return ResponseEntity.ok(odontologoService.buscarPorMatricula(matricula));
+    }
+
+
+
 
     //guarda un odontologo
     @PostMapping
@@ -36,6 +58,7 @@ public class OdontologoController {
 
     @GetMapping
     public ResponseEntity<List<Odontologo>> listarTodos() {
+
         return ResponseEntity.ok(odontologoService.listarTodos());
     }
 
@@ -51,7 +74,17 @@ public class OdontologoController {
             response = ResponseEntity.ok().body("No se puede actualizar el odontologo");
         }
         return response;
-
     }
-
+    @DeleteMapping()
+    public ResponseEntity<String> eliminar(@RequestBody Odontologo odontologo) {
+        ResponseEntity<String> response;
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
+        if (odontologoBuscado != null) {
+            odontologoService.eliminar(odontologo);
+            response = ResponseEntity.ok("Se elimino el odontologo con id " + odontologo.getId());
+        } else {
+            response = ResponseEntity.ok().body("No se puede actualizar el odontologo");
+        }
+        return response;
+    }
 }

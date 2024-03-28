@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
             },
             body: JSON.stringify(formDataOdontologo)
         }
-
+        console.log(formDataOdontologo)
         fetch(url, settings)
             .then(response => response.json())
             .then(data => {
