@@ -33,33 +33,32 @@ public class TurnoController {
         this.pacienteService = pacienteService;
     }
 
+
+    //Listar todos los turnos
     @GetMapping
     public ResponseEntity<List<Turno>> listarTodos() {
         return ResponseEntity.ok(turnoService.listarTodos());
     }
 
 
-    //endpoint para guardar un turno
+    //Guardar un turno
     @PostMapping
     public ResponseEntity<Turno> guardar(@RequestBody Turno turno) {
         ResponseEntity<Turno> response;
 
-        LOGGER.info("esto trae el turno: " + turno);
-//        vamos a chequear que exista el odontologo y la paciente
         if (odontologoService.buscarPorId(turno.getOdontologo().getId()) != null &&
                 pacienteService.buscarPorId(turno.getPaciente().getId()) != null) {
 
-            //setear una respuesta en 200 y vamos a hacer que devuelva el turno
             response = ResponseEntity.ok(turnoService.guardar(turno));
 
         } else {
-            //si no existe el odontologo o el paciente
             response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
         return response;
     }
 
 
+    //Actualizar un odontologo
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Turno turno) {
         ResponseEntity<String> response;
@@ -74,6 +73,7 @@ public class TurnoController {
     }
 
 
+    //Eliminar un paciente
     @DeleteMapping
     public ResponseEntity<String> eliminar(@RequestBody Turno turno) {
         ResponseEntity<String> response;

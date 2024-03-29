@@ -1,7 +1,9 @@
 package com.dh.ClinicMVC.controller;
 
+import com.dh.ClinicMVC.entity.Domicilio;
 import com.dh.ClinicMVC.entity.Odontologo;
 import com.dh.ClinicMVC.entity.Paciente;
+import com.dh.ClinicMVC.service.IDomicilioService;
 import com.dh.ClinicMVC.service.IPacienteService;
 import com.dh.ClinicMVC.service.implementation.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,16 +52,21 @@ public class PacienteController {
     }
 
 
+    //Guardar un nuevo paciente
     @PostMapping
     public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente) {
         return ResponseEntity.ok(pacienteService.guardar(paciente));
     }
+
+
+    //Listar todos los pacientes
     @GetMapping
     public ResponseEntity<List<Paciente>> listarTodos() {
         return ResponseEntity.ok(pacienteService.listarTodos());
     }
 
 
+    //Actualizar un paciente
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Paciente paciente) {
         ResponseEntity<String> response;
@@ -73,6 +80,8 @@ public class PacienteController {
         return response;
     }
 
+
+    //Eliminar un paciente
     @DeleteMapping()
     public ResponseEntity<String> eliminar(@RequestBody Paciente paciente) {
         ResponseEntity<String> response;

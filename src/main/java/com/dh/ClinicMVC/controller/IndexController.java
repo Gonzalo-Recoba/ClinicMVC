@@ -24,9 +24,7 @@ public class IndexController {
         this.odontologoService = odontologoService;
     }
 
-    //métodos -> endpoints -> GET/POST/PUT/DELETE
 
-    //localhost:8080/odontologo?id=1&nombre=Vanina
     @GetMapping
     public String buscarOdontologoPorId(Model model, @RequestParam Long id, @RequestParam String nombre) {
         Optional<Odontologo> odontologo = odontologoService.buscarPorId(id);

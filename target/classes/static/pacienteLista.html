@@ -1,119 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <title>Pacientes</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script text="text/javascript" src="/js/get_paciente.js"></script>
-<!--    <script text="text/javascript" src="/js/update_paciente.js"></script>-->
-<!--    <script text="text/javascript" src="/js/delete_paciente.js"></script>-->
-</head>
-<body>
+    <head>
+        <title>Pacientes</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclude" viewBox="0 0 16 16">
-            <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm12 2H5a1 1 0 0 0-1 1v7h7a1 1 0 0 0 1-1z"/>
-        </svg>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    </head>
+    <body>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclude" viewBox="0 0 16 16">
+                    <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm12 2H5a1 1 0 0 0-1 1v7h7a1 1 0 0 0 1-1z"/>
+                </svg>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Gestión de Odontologos
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="odontologoLista.html">Listar Odontologos</a>
-                    <a class="dropdown-item" href="odontologoAgregar.html">Agregar Odontologo</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Gestión de Pacientes
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="pacienteLista.html">Listar pacientes</a>
-                    <a class="dropdown-item" href="pacienteAgregar.html">Agregar pacientes</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Gestión de Turnos
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="turnoLista.html">Listar turnos</a>
-                    <a class="dropdown-item" href="turnoAgregar.html">Agregar turnos</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Gestión de Odontologos
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="odontologoLista.html">Listar Odontologos</a>
+                            <a class="dropdown-item" href="odontologoAgregar.html">Agregar Odontologo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Gestión de Pacientes
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="pacienteLista.html">Listar pacientes</a>
+                            <a class="dropdown-item" href="pacienteAgregar.html">Agregar pacientes</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Gestión de Turnos
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="turnoLista.html">Listar turnos</a>
+                            <a class="dropdown-item" href="turnoAgregar.html">Agregar turnos</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
-<div class="container">
-    <div id="div_paciente_table">
-        <h1>Pacientes</h1>
-        <div class="row col-10 table-responsive">
-            <table id="pacienteTable" class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Accion</th>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>DNI</th>
-                    <th>Fecha de ingreso</th>
-                </tr>
-                </thead>
-                <tbody id="pacienteTableBody">
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6" style="display: none; background-color:#e6fffa; padding:10px; border-radius:3px"
-             id="div_paciente_updating">
-            <form id="update_paciente_form">
-                <div class="form-group">
-                    <label >Id:</label>
-                    <input type="text" class="form-control" id="paciente_id" readonly>
-                </div>
-                <div class="form-group">
-                    <label >Nombre:</label>
-                    <input type="text" class="form-control" placeholder="nombre" id="nombrePaciente">
-                </div>
-                <div class="form-group">
-                    <label >Apellido</label>
-                    <input type="text" class="form-control" placeholder="apellido" id="apellidoPaciente">
-                </div>
-                <div class="form-group">
-                    <label >DNI</label>
-                    <input type="text" class="form-control" placeholder="DNI" id="dniPaciente">
-                </div>
-                <div class="form-group">
-                    <label >Fecha de Ingreso</label>
-                    <input type="text" class="form-control" placeholder="apellido" id="fechaIngresoPaciente">
+        <div class="container">
+            <div class="row">
+                <div id="div_paciente_table col-8">
+                    <h1>Pacientes</h1>
+                    <div class="table-responsive">
+                        <table id="pacienteTable" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Accion</th>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>DNI</th>
+                                <th>Fecha de ingreso</th>
+                            </tr>
+                            </thead>
+                            <tbody id="pacienteTableBody">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
+                <div class="col-sm-3" style="display: none; background-color:#e6fffa; padding:10px; border-radius:3px" id="div_paciente_updating">
+                    <form id="update_paciente_form">
+                        <div class="form-group">
+                            <label >Id:</label>
+                            <input type="text" class="form-control" id="paciente_id" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label >Nombre:</label>
+                            <input type="text" class="form-control" id="nombrePaciente">
+                        </div>
+                        <div class="form-group">
+                            <label >Apellido</label>
+                            <input type="text" class="form-control" id="apellidoPaciente">
+                        </div>
+                        <div class="form-group">
+                            <label >DNI</label>
+                            <input type="text" class="form-control" id="dniPaciente">
+                        </div>
+                        <div class="form-group">
+                            <label >Fecha de Ingreso</label>
+                            <input type="text" class="form-control" id="fechaIngresoPaciente">
+                        </div>
 
-                <button type="submit" class="btn btn-primary">Modificar</button>
-            </form>
-            <div id="response" style="display:none; margin:10px">
+
+                        <button type="submit" class="btn btn-primary">Modificar</button>
+                    </form>
+                    <div id="response" style="display:none; margin:10px">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
 
-</div>
-</body>
+    </body>
+    <script text="text/javascript" src="/js/get_paciente.js"></script>
 </html>

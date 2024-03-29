@@ -27,7 +27,7 @@ public class OdontologoController {
         return ResponseEntity.ok(odontologoService.buscarPorId(id));
     }
 
-    //busca por nombre
+    //Buscar por nombre
     @GetMapping("/nombre={nombre}")
     public ResponseEntity<Optional<Odontologo>> buscarPorNombre(@PathVariable String nombre) {
         return ResponseEntity.ok(odontologoService.buscarPorNombre(nombre));
@@ -49,13 +49,13 @@ public class OdontologoController {
 
 
 
-    //guarda un odontologo
+    //Guardar un odontologo
     @PostMapping
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo) {
         return ResponseEntity.ok(odontologoService.guardar(odontologo));
     }
 
-
+    //Listar todos los odontologos
     @GetMapping
     public ResponseEntity<List<Odontologo>> listarTodos() {
 
@@ -63,6 +63,7 @@ public class OdontologoController {
     }
 
 
+    //Actualizar un odontologo
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
         ResponseEntity<String> response;
@@ -75,6 +76,8 @@ public class OdontologoController {
         }
         return response;
     }
+
+    //Eliminar un odontologo
     @DeleteMapping()
     public ResponseEntity<String> eliminar(@RequestBody Odontologo odontologo) {
         ResponseEntity<String> response;

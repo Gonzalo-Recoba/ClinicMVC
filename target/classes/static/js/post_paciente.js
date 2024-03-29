@@ -1,66 +1,74 @@
 window.addEventListener('load', function () {
 
-    //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
-    //los datos que el usuario cargará del nuevo odontólogo
     const formularioPaciente = document.querySelector('#add_new_paciente');
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formularioPaciente.addEventListener('submit', function (event) {
 
-        //creamos un JSON que tendrá los datos del nuevo odontólogo
+        const formDataDomicilio = {
+            calle: document.querySelector("#calleDomicilioPaciente").value,
+            numero: document.querySelector("#numeroDomicilioPaciente").value,
+            localidad: document.querySelector("#localidadDomicilioPaciente").value,
+            provincia: document.querySelector("#provinciaDomicilioPaciente").value,
+        }
+        const urlDomicilios = "/domicilios"
+        const settingsDomicilio = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formDataDomicilio)
+        }
+        var idDomicilio;
+        fetch(urlDomicilios, settingsDomicilio)
+            .then(response => response.json())
+            .then(data => {
+                alert("Se creo el domicilio correctamente.")
+                idDomicilio = data.id;
+
+            })
+            .catch(error => {
+                alert("No se puede crear al domicilio, por favor intentelo nuevamente.")
+            })
+            .finally(()=>{
+                document.querySelector("#calleDomicilioPaciente").value,
+                document.querySelector("#numeroDomicilioPaciente").value,
+                document.querySelector("#localidadDomicilioPaciente").value,
+                document.querySelector("#provinciaDomicilioPaciente").value
+            })
+
+
         const formDataPaciente = {
             nombre: document.querySelector('#nombrePaciente').value,
             apellido: document.querySelector('#apellidoPaciente').value,
             dni: document.querySelector('#dniPaciente').value,
             fechaIngreso: document.querySelector('#fechaIngresoPaciente').value,
-        };
-        console.log(formDataPaciente)
-        //invocamos utilizando la función fetch la API odontólogos con el método POST que guardará
-        //el odontólogo que enviaremos en formato JSON
-        const url = '/pacientes';
-        const settings = {
+        }
+        const urlPacientes = '/pacientes';
+        const settingsPaciente = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formDataPaciente)
         }
-
-        fetch(url, settings)
+        fetch(urlPacientes, settingsPaciente)
             .then(response => response.json())
             .then(data => {
-                //Si no hay ningun error se muestra un mensaje diciendo que el paciente
-                //se agrego bien
-                let successAlert = '<div class="alert alert-success alert-dismissible">' +
-                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                    '<strong></strong> Paciente agregado </div>'
-
-                document.querySelector('#response').innerHTML = successAlert;
-                document.querySelector('#response').style.display = "block";
-                resetUploadForm();
-
+                alert("Se creo el paciente correctamente.")
             })
             .catch(error => {
-                //Si hay algun error se muestra un mensaje diciendo que el paciente
-                //no se pudo guardar y se intente nuevamente
-                let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
-                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                    '<strong> Error intente nuevamente</strong> </div>'
+                alert("No se puede crear al paciente, por favor intentelo nuevamente.")
+            })
+            .finally(()=>{
+                document.querySelector('#nombrePaciente').value = "";
+                document.querySelector('#apellidoPaciente').value = "";
+                document.querySelector("#dniPaciente").value = "";
+                document.querySelector("#fechaIngresoPaciente").value = "";
+            })
 
-                document.querySelector('#response').innerHTML = errorAlert;
-                document.querySelector('#response').style.display = "block";
-                //se dejan todos los campos vacíos por si se quiere ingresar otro odontólogo
-                resetUploadForm();})
     });
 
-
-    function resetUploadForm(){
-        document.querySelector('#nombrePaciente').value = "";
-        document.querySelector('#apellidoPaciente').value = "";
-        document.querySelector("#dniPaciente").value = "";
-        document.querySelector("#fechaIngresoPaciente").value = "";
-
-    }
 
     (function(){
         let pathname = window.location.pathname;

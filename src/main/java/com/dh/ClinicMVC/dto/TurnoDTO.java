@@ -7,6 +7,7 @@ import lombok.Setter;
 import net.sf.jsqlparser.expression.DateTimeLiteralExpression;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -15,5 +16,5 @@ public class TurnoDTO {
     private Long id;
     private Odontologo odontologo;
     private Paciente paciente;
-    private LocalDate fecha;
+    private LocalDateTime fecha;
 }
