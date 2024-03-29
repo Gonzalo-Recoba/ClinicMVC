@@ -81,7 +81,7 @@ public class PacienteController {
             pacienteService.eliminar(paciente);
             response = ResponseEntity.ok("Se elimino el paciente con id " + paciente.getId());
         } else {
-            response = ResponseEntity.ok().body("No se puede actualizar el paciente");
+            response = ResponseEntity.ok().body("No se puede eliminar el paciente");
         }
         return response;
     }
