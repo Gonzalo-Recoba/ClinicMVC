@@ -30,5 +30,4 @@ public class Odontologo {
     @OneToMany(mappedBy = "odontologo")
     @JsonIgnore
     private Set<Turno> turnoSet;
-
 }

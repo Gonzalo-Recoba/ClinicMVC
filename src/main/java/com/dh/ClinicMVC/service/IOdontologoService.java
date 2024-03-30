@@ -13,6 +13,7 @@ public interface IOdontologoService {
     Optional<Odontologo> buscarPorId(Long id);
 
     Optional<Odontologo> buscarPorNombre(String nombre);
+    
     Optional<Odontologo> buscarPorApellido(String apellido);
 
     Optional<Odontologo> buscarPorMatricula(String matricula);

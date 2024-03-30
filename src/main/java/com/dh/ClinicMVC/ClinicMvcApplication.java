@@ -10,7 +10,5 @@ public class ClinicMvcApplication {
 
 		SpringApplication.run(ClinicMvcApplication.class);
 
-
-
 	}
 }

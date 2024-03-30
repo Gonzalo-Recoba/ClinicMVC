@@ -9,10 +9,7 @@ window.addEventListener('load', function () {
         fetch(urlPacientes,settings)
             .then(response => response.json())
             .then(data => {
-                //recorremos la colección de turnos del JSON
                 for(paciente of data){
-                    //por cada turno armaremos una fila de la tabla
-                    //cada fila tendrá un id que luego nos permitirá borrar la fila si eliminamos el turno
                     selectPaciente.innerHTML +=
                         '<option value="'+ paciente.id +'" label="' + paciente.nombre.toUpperCase() + " " + paciente.apellido.toUpperCase() +'">' + paciente.nombre + '</option>';
                 }
@@ -21,10 +18,7 @@ window.addEventListener('load', function () {
         fetch(urlOdontologos,settings)
             .then(response => response.json())
             .then(data => {
-                //recorremos la colección de turnos del JSON
                 for(odontologo of data){
-                    //por cada turno armaremos una fila de la tabla
-                    //cada fila tendrá un id que luego nos permitirá borrar la fila si eliminamos el turno
                     selectOdontologo.innerHTML +=
                         '<option value="'+ odontologo.id +'" label="' + odontologo.nombre.toUpperCase() + " " + odontologo.apellido.toUpperCase() +'">' + odontologo.nombre + '</option>';
                 }
@@ -33,7 +27,6 @@ window.addEventListener('load', function () {
 
     const formularioTurno = document.querySelector('#add_new_turno');
     formularioTurno.addEventListener('submit', function (event) {
-
         const formDataTurno = {
             fecha: document.querySelector('#fechaTurno').value,
             odontologo: {
@@ -41,8 +34,6 @@ window.addEventListener('load', function () {
             paciente: {
                 id: document.querySelector('#selectPaciente').value}
             }
-
-
         const urlTurnos = '/turnos';
         const settings = {
             method: 'POST',
@@ -50,13 +41,11 @@ window.addEventListener('load', function () {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formDataTurno)
-
         }
         fetch(urlTurnos, settings)
             .then(response => response.json())
             .then(data => {
                 alert("Turno creado correctamente.")
-
             })
             .catch(error => {
                 alert("No se pudo crear el turno, intentelo nuevamente.")

@@ -39,7 +39,6 @@ public class PacienteService implements IPacienteService {
         return null;
     }
 
-
     @Override
     public Optional<Paciente> buscarPorNombre(String nombre) {
         Optional<Paciente> pacienteOptional = pacienteRepository.buscarPacientePorNombre(nombre);
@@ -70,10 +69,6 @@ public class PacienteService implements IPacienteService {
         }
     }
 
-
-
-
-
     @Override
     public void eliminar(Paciente paciente) {
         pacienteRepository.delete(paciente);
@@ -83,48 +78,4 @@ public class PacienteService implements IPacienteService {
     public void actualizar(Paciente paciente){
         pacienteRepository.save(paciente);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    private IDao<Paciente> pacienteIDao;
-//
-//    public PacienteService(IDao<Paciente> pacienteIDao) {
-//        this.pacienteIDao = pacienteIDao;
-//    }
-//
-//    @Override
-//    public Paciente guardar(Paciente paciente) {
-//        return pacienteIDao.guardar(paciente);
-//    }
-//
-//    @Override
-//    public List<Paciente> listarTodos() {
-//        return null;
-//    }
-//
-//    @Override
-//    public Paciente buscarPorId(Integer id) {
-//        return pacienteIDao.buscarPorId(id);
-//    }
-//
-//    @Override
-//    public void eliminar(Integer id) {
-//
-//    }
-//
-//    @Override
-//    public void actualizar(Paciente paciente) {
-//
-//    }
 }

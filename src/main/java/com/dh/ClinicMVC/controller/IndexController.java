@@ -40,5 +40,4 @@ public class IndexController {
         model.addAttribute("apellido", odontologo.get().getApellido());
         return "buscarOdontologo";
     }
-
 }

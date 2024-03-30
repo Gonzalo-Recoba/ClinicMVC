@@ -21,41 +21,34 @@ public class OdontologoController {
         this.odontologoService = odontologoService;
     }
 
-    //busca por id
+
     @GetMapping("/id{id}")
     public ResponseEntity<Optional<Odontologo>> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(odontologoService.buscarPorId(id));
     }
 
-    //Buscar por nombre
     @GetMapping("/nombre={nombre}")
     public ResponseEntity<Optional<Odontologo>> buscarPorNombre(@PathVariable String nombre) {
         return ResponseEntity.ok(odontologoService.buscarPorNombre(nombre));
     }
 
-    //Buscar por apellido
     @GetMapping("/apellido={apellido}")
     public ResponseEntity<Optional<Odontologo>> buscarPorApellido(@PathVariable String apellido) {
         return ResponseEntity.ok(odontologoService.buscarPorApellido(apellido));
     }
 
 
-    //Buscar por matricula
     @GetMapping("/matricula={matricula}")
     public ResponseEntity<Optional<Odontologo>> buscarPorMatricula(@PathVariable String matricula) {
         return ResponseEntity.ok(odontologoService.buscarPorMatricula(matricula));
     }
 
 
-
-
-    //Guardar un odontologo
     @PostMapping
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo) {
         return ResponseEntity.ok(odontologoService.guardar(odontologo));
     }
 
-    //Listar todos los odontologos
     @GetMapping
     public ResponseEntity<List<Odontologo>> listarTodos() {
 
@@ -63,7 +56,6 @@ public class OdontologoController {
     }
 
 
-    //Actualizar un odontologo
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
         ResponseEntity<String> response;
@@ -77,7 +69,7 @@ public class OdontologoController {
         return response;
     }
 
-    //Eliminar un odontologo
+
     @DeleteMapping()
     public ResponseEntity<String> eliminar(@RequestBody Odontologo odontologo) {
         ResponseEntity<String> response;

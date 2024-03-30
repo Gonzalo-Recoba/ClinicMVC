@@ -10,6 +10,7 @@ public interface IDomicilioService {
     Domicilio guardar (Domicilio domicilio);
 
     Optional<Domicilio> buscarPorId(Long id);
+    
     Optional<Domicilio> buscarPorCalle(String calle);
 
     Optional<Domicilio> buscarPorNumero(Integer numero);

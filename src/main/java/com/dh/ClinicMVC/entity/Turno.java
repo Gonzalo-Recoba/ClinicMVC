@@ -29,6 +29,5 @@ public class Turno {
     @JoinColumn(name ="paciente_id", nullable = false)
     private Paciente paciente;
 
-
     private LocalDateTime fecha;
 }

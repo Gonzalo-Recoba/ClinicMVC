@@ -38,6 +38,7 @@ public class OdontologoService implements IOdontologoService {
             return null;
         }
     }
+
     @Override
     public Optional<Odontologo> buscarPorNombre(String nombre) {
         Optional<Odontologo> odontologoOptional = odontologoRepository.buscarOdontologoPorNombre(nombre);
@@ -67,7 +68,6 @@ public class OdontologoService implements IOdontologoService {
             return null;
         }
     }
-
 
     @Override
     public void eliminar(Odontologo odontologo){odontologoRepository.delete(odontologo);}

@@ -1,8 +1,5 @@
 window.addEventListener('load', function () {
     (function(){
-
-        //con fetch invocamos a la API de odontólogos con el método GET
-        //nos devolverá un JSON con una colección de pacientes
         const url = "/pacientes";
         const settings = {
             method: 'GET'
@@ -11,10 +8,7 @@ window.addEventListener('load', function () {
         fetch(url,settings)
             .then(response => response.json())
             .then(data => {
-                //recorremos la colección de pacentes del JSON
                 for(paciente of data){
-                    //por cada paciente armaremos una fila de la tabla
-                    //cada fila tendrá un id que luego nos permitirá borrar la fila si eliminamos el paciente
                     var table = document.getElementById("pacienteTableBody");
                     var pacienteRow = table.insertRow();
                     let tr_id = 'tr_' + paciente.id;

@@ -17,5 +17,5 @@ public interface IOdontologoRepository extends JpaRepository<Odontologo, Long> {
     Optional<Odontologo> buscarOdontologoPorApellido(String apellido);
 
     @Query("SELECT o FROM Odontologo o WHERE o.matricula = ?1")
-    Optional<Odontologo> buscarOdontologoPorMatriucula(String matrigula);
+    Optional<Odontologo> buscarOdontologoPorMatriucula(String matricula);
 }

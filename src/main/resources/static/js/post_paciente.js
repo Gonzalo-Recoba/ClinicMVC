@@ -1,10 +1,7 @@
 window.addEventListener('load', function () {
-
     const formularioPaciente = document.querySelector('#add_new_paciente');
-
-    //Ante un submit del formulario se ejecutará la siguiente funcion
     formularioPaciente.addEventListener('submit', function (event) {
-
+        
         const formDataDomicilio = {
             calle: document.querySelector("#calleDomicilioPaciente").value,
             numero: document.querySelector("#numeroDomicilioPaciente").value,
@@ -19,13 +16,11 @@ window.addEventListener('load', function () {
             },
             body: JSON.stringify(formDataDomicilio)
         }
-        var idDomicilio;
         fetch(urlDomicilios, settingsDomicilio)
             .then(response => response.json())
             .then(data => {
                 alert("Se creo el domicilio correctamente.")
                 idDomicilio = data.id;
-
             })
             .catch(error => {
                 alert("No se puede crear al domicilio, por favor intentelo nuevamente.")
@@ -36,6 +31,7 @@ window.addEventListener('load', function () {
                 document.querySelector("#localidadDomicilioPaciente").value,
                 document.querySelector("#provinciaDomicilioPaciente").value
             })
+
 
 
         const formDataPaciente = {
@@ -66,7 +62,6 @@ window.addEventListener('load', function () {
                 document.querySelector("#dniPaciente").value = "";
                 document.querySelector("#fechaIngresoPaciente").value = "";
             })
-
     });
 
 

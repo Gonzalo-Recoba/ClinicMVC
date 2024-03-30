@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ITurnoService {
+
     Turno guardar(Turno turno);
+
     List<Turno> listarTodos();
 
     Optional<Turno> buscarPorId(Long id);

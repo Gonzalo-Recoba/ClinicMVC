@@ -44,35 +44,4 @@ public class TurnoService implements ITurnoService {
     public void actualizar(Turno turno) {
         turnoRepository.save(turno);
     }
-
-
-//
-//    private IDao<Turno> turnoDaoList;
-//    @Autowired
-//    public TurnoService(TurnoDaoList turnoDaoList) {
-//        this.turnoDaoList = turnoDaoList;
-//    }
-//
-//    @Override
-//    public Turno guardar(Turno turno) {
-//        return turnoDaoList.guardar(turno);
-//    }
-//
-//    @Override
-//    public List<Turno> listarTodos() {
-//        return null;
-//    }
-//
-//    @Override
-//    public Turno buscarPorId(Integer id) {
-//        return null;
-//    }
-//
-//    @Override
-//    public void eliminar(Integer id) {
-//    }
-//
-//    @Override
-//    public void actualizar(Turno turno) {
-//    }
 }

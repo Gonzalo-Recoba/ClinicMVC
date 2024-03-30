@@ -19,7 +19,7 @@ public interface IDomicilioRepository extends JpaRepository<Domicilio, Long> {
     @Query("SELECT d FROM Domicilio d WHERE d.localidad = ?1")
     Optional<Domicilio> buscarPorLocalidad(String localidad);
 
-
     @Query("SELECT d FROM Domicilio d WHERE d.provincia = ?1")
     Optional<Domicilio> buscarPorProvincia(String provincia);
+
 }

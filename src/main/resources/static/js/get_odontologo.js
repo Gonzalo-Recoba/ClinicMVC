@@ -40,10 +40,7 @@ window.addEventListener('load', function () {
 function deleteOdontologo(id){
     let resp = confirm("Seguro desea eliminar al Odontologo?")
     if (resp) {
-
-        const dataOdontologo = {
-            id: id
-        }
+        const dataOdontologo = {id: id}
         const url = '/odontologos';
         const settings = {
             method: 'DELETE',

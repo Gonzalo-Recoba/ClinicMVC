@@ -25,48 +25,40 @@ public class PacienteController {
     }
 
 
-    //Buscar por id
     @GetMapping("/id{id}")
     public ResponseEntity<Optional<Paciente>> buscarPorId(@PathVariable Long id) {
-
         return ResponseEntity.ok(pacienteService.buscarPorId(id));
     }
 
-    //Buscar por nombre
     @GetMapping("/nombre={nombre}")
     public ResponseEntity<Optional<Paciente>> buscarPorNombre(@PathVariable String nombre) {
         return ResponseEntity.ok(pacienteService.buscarPorNombre(nombre));
     }
 
-    //Buscar por apellido
     @GetMapping("/apellido={apellido}")
     public ResponseEntity<Optional<Paciente>> buscarPorApellido(@PathVariable String apellido) {
         return ResponseEntity.ok(pacienteService.buscarPorApellido(apellido));
     }
 
 
-    //Buscar por DNI
     @GetMapping("/dni={dni}")
     public ResponseEntity<Optional<Paciente>> buscarPorDni(@PathVariable String dni) {
         return ResponseEntity.ok(pacienteService.buscarPorDni(dni));
     }
 
 
-    //Guardar un nuevo paciente
     @PostMapping
     public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente) {
         return ResponseEntity.ok(pacienteService.guardar(paciente));
     }
 
 
-    //Listar todos los pacientes
     @GetMapping
     public ResponseEntity<List<Paciente>> listarTodos() {
         return ResponseEntity.ok(pacienteService.listarTodos());
     }
 
 
-    //Actualizar un paciente
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Paciente paciente) {
         ResponseEntity<String> response;
@@ -81,7 +73,6 @@ public class PacienteController {
     }
 
 
-    //Eliminar un paciente
     @DeleteMapping()
     public ResponseEntity<String> eliminar(@RequestBody Paciente paciente) {
         ResponseEntity<String> response;

@@ -1,17 +1,12 @@
 window.addEventListener('load', function () {
 
-    //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
-    //los datos que el usuario cargará del nuevo odontólogo
     const formulario = document.querySelector('#add_new_dentist');
 
-    //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
-
         const formDataOdontologo = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
             matricula: document.querySelector('#matricula').value,
-
         };
 
         const url = '/odontologos';
